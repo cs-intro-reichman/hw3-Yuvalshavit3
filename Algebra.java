@@ -25,43 +25,65 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		for (int i = 0; i < x2; i++){
+			x1++;
+		}
+		return x1;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		for (int i = 0; i < x2 ; i++) {
+			x1--;
+		}
+		return x1;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int total = 0;
+		for (int i = 0; i < x2 ; i++) {
+			total = total + x1;
+		}
+		return total;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int total = 1;
+		for (int i = 0; i < n ; i++) {
+			total = total * x;
+		}
+		return total;
 	}
 
-	// Returns the integer part of x1 / x2 
+	// Returns the integer part of x1 / x2
 	public static int div(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 0;
+		for (int total = 0; total + x2 <= x1; i++) {
+			total = total + x2;
+		}
+		return i;
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
-	}	
+		int total = 0;
+		total = x1 - div(x1, x2) * x2;
+		return total;
+	}
 
-	// Returns the integer part of sqrt(x) 
+	// Returns the integer part of sqrt(x)
 	public static int sqrt(int x) {
-		// Replace the following statement with your code
-		return 0;
-	}	  	  
+		int i = 1;
+		for (; i * i <= x; i++) {
+			
+		}
+		if (i * i == x) {
+			return i;
+		} else {
+			return i - 1;
+		}
+		
+	}
 }
