@@ -3,7 +3,6 @@ public class Anagram {
 	public static void main(String args[]) {
 		// Tests the isAnagram function.
 		System.out.println(isAnagram("silent","listen"));  // true
-		
 		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
 		System.out.println(isAnagram("Madam Curie","Radium came")); // true
 		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
@@ -32,9 +31,9 @@ public class Anagram {
 	// Returns true if the two given strings are anagrams, false otherwise.
 	   
 	public static boolean isAnagram(String str1, String str2) {
-		String str1_pro = preProcess(str1);
-		String str2_pro = preProcess(str2);
-		if(str1_pro.length()!=str2_pro.length()){
+		String str1_pro = preProcessNoSpaces(str1);
+		String str2_pro = preProcessNoSpaces(str2);
+		if(str1_pro.length() != str2_pro.length()){
 			return false;
 		}
 		boolean answer = false;
@@ -67,11 +66,25 @@ public class Anagram {
 				newPhrase = newPhrase + phrase.charAt(i);
 			} else if ((phrase.charAt(i) > 64) && ((phrase.charAt(i) < 91))) {
 				newPhrase = newPhrase + (char)(phrase.charAt(i) + 32);
+			} else if (phrase.charAt(i) == ' ') {
+				newPhrase = newPhrase + phrase.charAt(i);
 			}
 		}
 		return newPhrase;
-	} 
+	}
 	   
+	public static String preProcessNoSpaces(String str) {
+		String phrase = str;
+		String newPhrase = "";
+		for (int i = 0; i < phrase.length(); i ++) {
+			if((phrase.charAt(i) > 96) && ((phrase.charAt(i) < 123))){
+				newPhrase = newPhrase + phrase.charAt(i);
+			} else if ((phrase.charAt(i) > 64) && ((phrase.charAt(i) < 91))) {
+				newPhrase = newPhrase + (char)(phrase.charAt(i) + 32);
+			} 
+		}
+		return newPhrase;
+	}
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	
