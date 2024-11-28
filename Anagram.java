@@ -28,22 +28,57 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		// Replace the following statement with your code
-		return false;
+		String str1pro = preProcess(str1);
+		String str2pro = preProcess(str2);
+		boolean check = false;
+		int checkcount = 0;
+		if(str1pro.length() == str2pro.length()) {
+			for(int i = 0; i < str1pro.length(); i ++) {
+				for(int j = 0; j < str2pro.length(); j++){
+					if (str1pro.charAt(i) == str2pro.charAt(j)) {
+						checkcount = checkcount + 1;
+					}
+				}
+			}
+		}
+
+		if (checkcount == str1pro.length()) {
+			check = true;
+		}
+		return check;
 	}
 	   
 	// Returns a preprocessed version of the given string: all the letter characters are converted
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
-		// Replace the following statement with your code
-		return "";
+		String phrase = str;
+		String newPhrase = "";
+		for (int i = 0; i < phrase.length(); i ++) {
+			if((phrase.charAt(i) > 96) && ((phrase.charAt(i) < 123))){
+				newPhrase = newPhrase + phrase.charAt(i);
+			} else if ((phrase.charAt(i) > 64) && ((phrase.charAt(i) < 91))) {
+				newPhrase = newPhrase + (char)(phrase.charAt(i) + 32);
+			}
+		}
+		return newPhrase;
 	} 
 	   
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
-		// Replace the following statement with your code
-		return "";
+		String newWord = "";
+		int strOriginalLength = str.length();
+		// String usedChars = "";
+		while(usedChars < str.lenth()){
+			int randomNum = str.length() * (int)Math.random();
+			char charat = str.charAt(randomNum);
+			newWord = newWord + charat;
+			
+		}
+			
+		
+
+		return newWord;
 	}
 }
