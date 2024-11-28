@@ -48,7 +48,6 @@ public class LoanCalc {
 			g = g + epsilon;
 		}
 		return g;
-		
     }
     
     // Uses bisection search to compute an approximation of the periodical payment 
@@ -58,7 +57,7 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
         double L = loan / n ; //endBalance > 0
-		double H = 20000.00; //endBalance < 0
+		double H = loan; //endBalance < 0
 		iterationCounter = 0;
 		double g = (L + H) / 2.0;
 
