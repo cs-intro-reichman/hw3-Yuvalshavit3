@@ -67,8 +67,6 @@ public class Anagram {
 				newPhrase = newPhrase + phrase.charAt(i);
 			} else if ((phrase.charAt(i) > 64) && ((phrase.charAt(i) < 91))) {
 				newPhrase = newPhrase + (char)(phrase.charAt(i) + 32);
-			} else if (phrase.charAt(i) == ' ') {
-				newPhrase = newPhrase + phrase.charAt(i);
 			}
 		}
 		return newPhrase;
